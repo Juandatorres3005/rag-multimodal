@@ -1,0 +1,25 @@
+services:
+  # Servicio 1: Backend API (FastAPI)
+  - type: web
+    name: rag-backend
+    env: docker
+    dockerfilePath: Dockerfile.backend
+    plan: free
+    region: oregon
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+
+  # Servicio 2: Frontend UI (Streamlit)
+  - type: web
+    name: rag-frontend
+    env: docker
+    dockerfilePath: Dockerfile.frontend
+    plan: free
+    region: oregon
+    envVars:
+      - key: BACKEND_URL
+        fromService:
+          type: web
+          name: rag-backend
+          property: url
