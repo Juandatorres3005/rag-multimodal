@@ -172,3 +172,11 @@ with open("README.md", "w", encoding="utf-8") as f:
 f.write(readme_content)
 
 print("¡README.md generado con éxito!")
+
+---
+
+## 🌐 Demostración en la Nube (Deployment)
+
+El sistema se encuentra desplegado y funcional en Render:
+* **Aplicación Web (Streamlit UI):** https://rag-frontend-5v5h.onrender.com
+* **Documentación interactiva de la API (FastAPI Docs):** https://rag-backend-5v5h.onrender.com/docs
