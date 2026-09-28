@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: rag-backend
+    env: docker
+    dockerfilePath: Dockerfile.backend
+    plan: free
+    region: oregon
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+
+  - type: web
+    name: rag-frontend
+    env: docker
+    dockerfilePath: Dockerfile.frontend
+    plan: free
+    region: oregon
+    envVars:
+      - key: BACKEND_URL
+        sync: false
