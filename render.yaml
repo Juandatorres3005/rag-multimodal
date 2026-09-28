@@ -2,8 +2,7 @@ services:
   - type: web
     name: rag-backend
     env: docker
-    dockerContext: .
-    dockerfilePath: Dockerfile.backend
+    dockerfilePath: ./backend/Dockerfile
     plan: free
     region: oregon
     envVars:
@@ -13,8 +12,7 @@ services:
   - type: web
     name: rag-frontend
     env: docker
-    dockerContext: .
-    dockerfilePath: Dockerfile.frontend
+    dockerfilePath: ./frontend/Dockerfile
     plan: free
     region: oregon
     envVars:
